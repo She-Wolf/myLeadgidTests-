@@ -9,4 +9,3 @@ passed_partner_login = "Вошли в ЛК партнера № 30003"
 failed_partner_login = "Где-то упало на этапе входа в партнера"
 passed_shop_popup = 'Боковая панель магазина отображается'
 failed_shop_popup = 'Что-то не так с панелью магазина'
-jpozfjdfokfpoakfopdskpofkspodkfposadk
