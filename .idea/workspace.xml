@@ -10,7 +10,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/variables.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -19,7 +19,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/try_buy_test.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +40,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/variables.py" />
+        <option value="$PROJECT_DIR$/try_buy_test.py" />
       </list>
     </option>
   </component>
@@ -83,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547736326169</updated>
-      <workItem from="1547736328999" duration="462000" />
+      <workItem from="1547736328999" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="clear">
       <created>1547736441869</created>
@@ -96,19 +109,28 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462000" />
+    <option name="totallyTimeSpent" value="844000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" sideWeight="0.4994664" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49893278" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49893278" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5010672" side_tool="true" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -139,6 +161,9 @@
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/try_buy_test.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
