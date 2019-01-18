@@ -4,12 +4,12 @@ from datetime import date
 ''' Тест авторизации в админа -> партнера -> переход в магазин '''
 
 
-def checkout_by_text(checkout_text, passed_text, failed_text):
+def checkout_by_text(checkout_text: 'exist text', passed_text:'if detected', failed_text:' if failed'):
     ''' Проверяет по наличию текста на странице, выводит результат проверки '''
     if browser.is_text_present(checkout_text):
-        print (passed_text)
+        variables.green_text(passed_text)
     else:
-        print (failed_text)
+        variables.green_text(failed_text)
         browser.screenshot('downloads/{date.today()}.png')
 
 
@@ -35,13 +35,14 @@ browser.find_by_css('.shopHeaderButton__link.out').click()
 
 # Проверка отображения панели
 if browser.find_by_css('.shopPopup.selected').visible:
-    print(variables.passed_shop_popup)
+    variables.green_text(variables.passed_shop_popup)
 else:
-    print(variables.failed_shop_popup)
+    variables.red_text(variables.failed_shop_popup)
     browser.screenshot('downloads/{date.today()}.png')
 
 # Переход в магазин
 browser.find_by_css('.shopPopup__button').click()
 
+checkout_by_text(variables.try_shop, variables.passed_shop, variables.failed_shop)
 
 #browser.quit()
