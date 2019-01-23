@@ -1,6 +1,5 @@
 from time import sleep
 from splinter import Browser
-import variables
 
 browser = Browser()
 
