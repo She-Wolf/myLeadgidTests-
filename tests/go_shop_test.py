@@ -8,8 +8,9 @@ def checkout_by_text(checkout_text: 'exist text', passed_text:'if detected', fai
 	if browser.is_text_present(checkout_text):
 		variables.green_text(passed_text)
 	else:
-		variables.green_text(failed_text)
+		variables.red_text(failed_text)
 		browser.screenshot('downloads/{date.today()}.png')
+		browser.quit()
 
 # Открытие главной сайта, попытка логина
 browser = Browser()
@@ -51,10 +52,12 @@ checkout_by_text(variables.try_shop, variables.passed_shop, variables.failed_sho
 #
 #
 # Проверка возможности выбрать товар
-if browser.find_by_css('.shopItem').first.visible and browser.find_by_css('.shopButton').first.visible:
+try:
 	browser.find_by_css('.shopButton').click()
-else:
-	print('Элементы недоступны. Проверьте не заказаны ли уже 3 товара')
+except Exception:
+	print('Элементы недоступны. Проверьте не заказан ли уже 1й товар')
+	# browser.visit()
+	browser.quit()
 
 checkout_by_text(variables.try_order,variables.passed_item_form, variables.failed_item_form)
 
@@ -68,9 +71,17 @@ browser.find_by_id('email').fill('name@domain.com')
 # Адрес доставки
 browser.find_by_id('country').fill('Россия')
 browser.find_by_id('region').fill('Иркутская область')
+browser.find_by_id('index').fill('664000')
 browser.find_by_id('city').fill('Иркутск')
-browser.find_by_id('build').fill('Иркутская область')
 browser.find_by_id('street').fill('Иркутская область')
+browser.find_by_id('build').fill('7')
+# Лицензия
+browser.find_by_css('.shopForm__checkbox').check()
+browser.find_by_id('submitForm').click()
+# Заказ завершен?
+checkout_by_text(variables.try_ordered, variables.passed_ordered, variables.failed_ordered)
+
+
 
 #sleep(2)
 #browser.quit()
