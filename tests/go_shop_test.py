@@ -56,7 +56,8 @@ try:
 	browser.find_by_css('.shopButton').click()
 except Exception:
 	print('Элементы недоступны. Проверьте не заказан ли уже 1й товар')
-	# browser.visit()
+	# browser.visit('https://panamera.leadgid.ru/admin/?entity=PanameraOrders&action=list&menuIndex=1&submenuIndex=-1')
+	# browser.find_by_xpath('//*[@id="main"]/div[1]/table/tbody/tr/td[8]/a[2]').click()
 	browser.quit()
 
 checkout_by_text(variables.try_order,variables.passed_item_form, variables.failed_item_form)
