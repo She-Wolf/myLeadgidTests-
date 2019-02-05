@@ -1,5 +1,6 @@
 from splinter import Browser
 from tests import variables
+import time
 ''' Тест авторизации в админа -> партнера -> переход в магазин '''
 
 
@@ -23,7 +24,7 @@ browser.find_by_css('button').click()
 checkout_by_text(variables.try_admin_logined, variables.passed_admin_login, variables.failed_admin_login)
 
 #Попытка логина партнера
-browser.fill('affiliate_id', '30003')
+browser.fill('affiliate_id', '37971')
 browser.find_by_css('button.btn').click()
 
 # Проверка авторизации партнера
@@ -44,43 +45,56 @@ browser.find_by_css('.shopPopup__button').click()
 
 checkout_by_text(variables.try_shop, variables.passed_shop, variables.failed_shop)
 
+time.sleep(4)
+
+#Переход на страницу заказа товара из адресной строки
+try:
+	browser.visit('http://my-db.leadgid.space/affiliate/spystore/order_ticket/1')
+	print('Страница редиректнулась обратно? ')
+except Exception:
+	print('При переходе по ссылке товара что-то наебнулось')
+time.sleep(1)
+browser.quit()
+
+
+
+
+
 
 #
 # Следующий скрипт try_buy_test
 #
 #
-#
-#
 # Проверка возможности выбрать товар
-try:
-	browser.find_by_css('.shopButton').click()
-except Exception:
-	print('Элементы недоступны. Проверьте не заказан ли уже 1й товар')
-	# browser.visit('https://panamera.leadgid.ru/admin/?entity=PanameraOrders&action=list&menuIndex=1&submenuIndex=-1')
-	# browser.find_by_xpath('//*[@id="main"]/div[1]/table/tbody/tr/td[8]/a[2]').click()
-	browser.quit()
-
-checkout_by_text(variables.try_order,variables.passed_item_form, variables.failed_item_form)
-
-# Заполнение формы минимально необходимыми значениями
-# Личные данные
-browser.find_by_text('L').click()
-browser.find_by_id('surname').fill('Тест')
-browser.find_by_id('firstname').fill('Тест')
-browser.find_by_id('phone').fill('89000110011')
-browser.find_by_id('email').fill('name@domain.com')
-# Адрес доставки
-browser.find_by_id('country').fill('Россия')
-browser.find_by_id('region').fill('Иркутская область')
-browser.find_by_id('index').fill('664000')
-browser.find_by_id('city').fill('Иркутск')
-browser.find_by_id('street').fill('Иркутская область')
-browser.find_by_id('build').fill('7')
-# Лицензия
-browser.find_by_css('.shopForm__checkbox').check()
-browser.find_by_id('submitForm').click()
-# Заказ завершен?
-checkout_by_text(variables.try_ordered, variables.passed_ordered, variables.failed_ordered)
+# try:
+# 	browser.find_by_css('.shopButton').click()
+# except Exception:
+# 	print('Элементы недоступны. Проверьте не заказан ли уже 1й товар')
+# 	# browser.visit('https://panamera.leadgid.ru/admin/?entity=PanameraOrders&action=list&menuIndex=1&submenuIndex=-1')
+# 	# browser.find_by_xpath('//*[@id="main"]/div[1]/table/tbody/tr/td[8]/a[2]').click()
+# 	browser.quit()
+#
+# checkout_by_text(variables.try_order,variables.passed_item_form, variables.failed_item_form)
+#
+# # Заполнение формы минимально необходимыми значениями
+# # Личные данные
+# browser.find_by_text('L').click()
+# browser.find_by_id('surname').fill('Тест')
+# browser.find_by_id('firstname').fill('Тест')
+# browser.find_by_id('phone').fill('89000110011')
+# browser.find_by_id('email').fill('name@domain.com')
+# # Адрес доставки
+# browser.find_by_id('country').fill('Россия')
+# browser.find_by_id('region').fill('Иркутская область')
+# browser.find_by_id('index').fill('664000')
+# browser.find_by_id('city').fill('Иркутск')
+# browser.find_by_id('street').fill('Иркутская область')
+# browser.find_by_id('build').fill('7')
+# # Лицензия
+# browser.find_by_css('.shopForm__checkbox').check()
+# browser.find_by_id('submitForm').click()
+# # Заказ завершен?
+# checkout_by_text(variables.try_ordered, variables.passed_ordered, variables.failed_ordered)
 
 
 
