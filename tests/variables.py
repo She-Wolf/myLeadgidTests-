@@ -1,6 +1,6 @@
 site = 'http://my-db.leadgid.space/affiliate/spystore/'
-login = 'e.dubitskaya@leadgid.ru'
-password = 'Wolfy023'
+login = 'test@test.ru'
+password = '222'
 
 try_admin_logined = 'Войти как партнёр'
 passed_admin_login = "Залогинились в партнера"
